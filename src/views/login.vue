@@ -10,7 +10,9 @@
      placeholder="手机号"
      :btnTitle="btnTitle"
      :disabled="disabled"
-     :error="errors.phone"/>
+     :error="errors.phone"
+     @btn-click="getVerifyCode"
+     />
     <!--验证码  -->
     <inputGroup
      type="number"
@@ -43,7 +45,48 @@ export default {
         btnTitle:"获取验证码",
         disabled:false
       }
-
+    },
+    methods:{
+      getVerifyCode(){
+        if(this.validatePhone()){
+          // 发送网络请求
+          this.validateBtn();
+        }
+      },
+      validateBtn(){
+        let time=60;
+        let timer=setInterval(()=>{
+          // 判断当前time==0
+          if(time==0){
+            clearInterval(timer);
+            this.btnTitle="获取验证码";
+            this.disabled=false;
+          }else{
+            // 倒计时
+            this.btnTitle=time +"秒后重试";
+            this.disabled=true;
+            time--;
+          }
+        })
+      },
+      validatePhone(){
+        // 验证手机号码
+        // 判断手机号码不能为空
+        if(!this.phone){
+          this.errors={
+            phone:"手机号码不能为空"
+          };
+          return false;
+        }else if(!/^1[345678]\d{9}$/.test(this.phone)){
+          this.errors={
+            phone:"请填写正确的手机号码"
+          }
+          return false ;
+        }else{
+          this.errors={};
+          return true
+        }
+      }
     },
     components:{
       inputGroup
@@ -63,5 +106,30 @@ export default {
 }
 .logo img{
   width: 250px;
+}
+.text_group,
+.login_des,
+.login_btn {
+  margin-top: 20px;
+}
+.login_des {
+  color: #aaa;
+  line-height: 22px;
+}
+.login_des span {
+  color: #4d90fe;
+}
+.login_btn button {
+  width: 100%;
+  height: 40px;
+  background-color: #48ca38;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+.login_btn button[disabled] {
+  background-color: #8bda81;
 }
 </style>
