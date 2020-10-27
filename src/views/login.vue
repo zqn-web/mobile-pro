@@ -27,7 +27,7 @@
      </div>
      <!-- 登录按钮 -->
      <div class="login_btn">
-       <button>登录</button>
+       <button :disabled="isClick" @click="login">登录</button>
      </div>
   </div>
 </template>
@@ -46,15 +46,51 @@ export default {
         disabled:false
       }
     },
+    computed:{
+     isClick(){
+       if(!this.phone || !this.verifyCode){
+         return true
+       }else { return false}
+     }
+    },
     methods:{
+      login(){
+        // 取消错误提醒
+        this.errors={};
+        // 发送请求
+        this.$axios.post("/api/posts/ctites",{
+          phone:this.phone,
+          code:this.verifyCode
+        })
+        .then(res=>{
+          console.log(res);
+          // 检验成功 设置登录状态 并跳转到登录页面
+          localStorage.setItem("mobile_login",true)
+          this.$router.push("/")
+        })
+        .catch(err=>{
+          // 返回错误信息
+          this.errors={
+            code:err.response.data.msg
+          }
+        })
+      },
       getVerifyCode(){
         if(this.validatePhone()){
           // 发送网络请求
+          // this.$axios.post('/api/posts/sms_send',{
+          //   sid:"70e9281073fe5e1546b7f657cae73897",
+          //   token:"d1a5431e19d2005c3286794786111d79",
+          //   appid:"099a1aedcf1 9400a9eb83d857eb7b845",
+          //   templateid:"522016",
+          //   phone:""
+
+          // })
           this.validateBtn();
         }
       },
       validateBtn(){
-        let time=60;
+        let time=59;
         let timer=setInterval(()=>{
           // 判断当前time==0
           if(time==0){
@@ -67,7 +103,7 @@ export default {
             this.disabled=true;
             time--;
           }
-        })
+        },1000)
       },
       validatePhone(){
         // 验证手机号码
