@@ -8,9 +8,7 @@
     active-class="is-selected"
     >
      <div class="tab-item-icon">
-       <!-- <i :></i> -->
-       <!-- <img src="../public/image" alt=""> -->
-       <i :class="'fa fa-' + item.icon"></i>
+       <img :src="item.path===$route.fullPath ? item.iconActive : item.icon" style="width: 20px;" />
      </div>
      <div class="tab-item-label">{{item.title}}</div>
     </router-link>
@@ -56,9 +54,6 @@ export default {
   height: 20px;
   margin: 0 auto 5px;
 }
-/* .tab-item-icon i {
-  font-size: 16px;
-} */
 .tab-item-label {
   color: inherit;
   font-size: 10px;
