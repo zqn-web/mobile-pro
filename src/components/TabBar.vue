@@ -31,15 +31,6 @@ export default {
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-image: linear-gradient(
-    180deg,
-    #d9d9d9,
-    #d9d9d9 50%,
-    transparent 0
-  );
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
   background-color: #fafafa;
   display: flex;
   text-align: center;

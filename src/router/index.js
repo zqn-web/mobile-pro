@@ -17,7 +17,7 @@ const router = new VueRouter({
       children:[
         {
           path:"",
-          redirect:"/home"
+          redirect:"/login"
         },
         {
           path:"/home",
@@ -33,6 +33,11 @@ const router = new VueRouter({
           path:"/me",
           name:"me",
           component:()=>import("../views/Me.vue")
+        },
+        {
+          path:"/address",
+          name:"address",
+          component:()=>import("../views/Address.vue")
         },
       ]
     },

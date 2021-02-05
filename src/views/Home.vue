@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="header">
-      <div class="address_map">
+      <div class="address_map" @click="$router.push('/address')">
         <img src="image/ad.png" alt="">
         <span>{{address}}</span>
         <img src="image/san.png" alt="">
@@ -24,7 +24,7 @@ export default {
    }
 }
 </script>
-<style>
+<style scoped>
 .home {
   width: 100%;
   height: 100%;
@@ -39,10 +39,6 @@ export default {
   color: #fff;
   font-weight: bold;
 }
-.address_map i {
-  margin: 0 3px;
-  font-size: 18px;
-}
 .address_map img {
   height: 15px;
   width: 15px;
@@ -50,12 +46,14 @@ export default {
 .shop_search img {
   height: 15px;
   width: 15px;
+  vertical-align: middle;
 }
 .address_map span {
   display: inline-block;
   width: 80%;
   overflow: hidden;
   white-space: nowrap;
+  /* 省略号形式显示超出部分 */
   text-overflow: ellipsis;
 }
 .header .shop_search {

@@ -7,6 +7,6 @@ export default {
     name:"me"
 }
 </script>
-<style>
+<style  scoped>
 
 </style>

@@ -7,6 +7,6 @@ export default {
     name:"order"
 }
 </script>
-<style>
+<style  scoped>
 
 </style>
