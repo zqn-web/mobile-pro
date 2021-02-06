@@ -39,6 +39,11 @@ const router = new VueRouter({
           name:"address",
           component:()=>import("../views/Address.vue")
         },
+        {
+          path:"/city",
+          name:"city",
+          component:()=>import("../views/City.vue")
+        },
       ]
     },
     {
@@ -55,15 +60,5 @@ const router = new VueRouter({
   
 })
 
-// 路由守卫
-// router.beforeEach((to,from,next)=>{
-//   const islogin=localStorage.ele_login ? true:false;
-//   if(to.path=="/login"){
-//     next()
-//   }else{ 
-//     // 是否在登录状态下
-//     islogin ? next() : next("/login")
-//   }
-// })
 
 export default router
