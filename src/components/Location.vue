@@ -1,9 +1,10 @@
 <template>
   <div>
-      <div class="title">当前定位</div>
       <div class="des">
-          <img src="image/fly.png" alt="">
-          <span>{{address}}</span>
+          <div class="title">
+            <img src="image/fly.png" alt="">
+              当前定位
+          </div>
       </div>
   </div>
 </template>
@@ -22,17 +23,8 @@ export default {
   font-size: 12px;
 }
 .des img {
-  width: 20px;
-  height: 20px;
-}
-.des span {
-  color: #333;
-  font-weight: bold;
-  margin-left: 5px;
-  display: inline-block;
-  width: 90%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
 }
 </style>

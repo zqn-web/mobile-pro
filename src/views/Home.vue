@@ -6,11 +6,14 @@
         <span>{{address}}</span>
         <img src="image/san.png" alt="">
       </div>
+    </div>
+    <div class="search_wrap">
       <div class="shop_search">
         <img src="image/search.png" alt="">
         搜索商家 商家名称
       </div>
     </div>
+    <div id="container" style="height:2000px"></div>
   </div>
 </template>
 
@@ -28,12 +31,12 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
   box-sizing: border-box;
 }
-.header {
+.header,.search_wrap {
   background-color: #009eef;
-  padding: 16px;
+  padding:10px  16px;
 }
 .header .address_map {
   color: #fff;
@@ -56,12 +59,18 @@ export default {
   /* 省略号形式显示超出部分 */
   text-overflow: ellipsis;
 }
-.header .shop_search {
-  margin-top: 10px;
+.search_wrap .shop_search {
+  /* margin-top: 10px; */
   background-color: #fff;
   padding: 10px 0;
   border-radius: 4px;
   text-align: center;
   color: #aaa;
+}
+.search_wrap {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+  box-sizing: border-box;
 }
 </style>
