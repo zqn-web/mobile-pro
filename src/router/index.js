@@ -47,6 +47,11 @@ const router = new VueRouter({
       ]
     },
     {
+      path:"/details",
+      name:"details",
+      component:()=>import("../views/Details.vue")
+    },
+    {
       path: '/index',
       name: 'index',
       component: ()=>import("../views/index.vue")

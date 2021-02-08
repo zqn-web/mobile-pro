@@ -17,24 +17,6 @@ export default {
         return{
             city_val:""
         }
-    },
-    // 钩子函数
-    created(){
-      this.getCityInfo();
-    },
-    methods:{
-      getCityInfo(){
-        this.$axios("/api/posts/cities")
-        .then(res=>{
-          // console.log(res.data)
-          this.cityInfo=res.data;
-          this.key=Object.keys(res.data);
-          console.log(this.keys)
-        })
-        .catch(err=>{
-          console.log(err)
-        })
-      }
     }
 }
 </script>
