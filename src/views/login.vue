@@ -58,7 +58,7 @@ export default {
         // 取消错误提醒
         this.errors={};
         // 点击跳转 
-        this.$router.push('/index')
+        this.$router.push('/home')
       },
       getVerifyCode(){
         if(this.validatePhone()){
