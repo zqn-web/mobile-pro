@@ -29,7 +29,7 @@
         <img src="image/view2.jpg" alt="">
       </div>
     </div>
-    <div class="button" @click="$router.push('/order')">立即购买</div>
+    <div class="button" @click="$router.push('/order_start')">立即购买</div>
   </div>
 </template>
 

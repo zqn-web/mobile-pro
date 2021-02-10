@@ -5,6 +5,10 @@ import store from './store'
 import axios from "axios";
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
+
+Vue.use(ViewUI);
 
 
 
@@ -33,6 +37,7 @@ Vue.use(MintUI);
 
 
 new Vue({
+  el: '#app',
   router,
   store,
   render: h => h(App)

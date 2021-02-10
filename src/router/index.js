@@ -52,6 +52,16 @@ const router = new VueRouter({
       component:()=>import("../views/Details.vue")
     },
     {
+      path:"/order_start",
+      name:"order_start",
+      component:()=>import("../views/Order_start.vue")
+    },
+    {
+      path:"/order_pay",
+      name:"order_pay",
+      component:()=>import("../views/Order_pay.vue")
+    },
+    {
       path: '/index',
       name: 'index',
       component: ()=>import("../views/index.vue")

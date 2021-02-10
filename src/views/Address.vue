@@ -120,7 +120,6 @@ export default {
   outline: none;
   border: none;
 }
-
 .area {
   margin-top: 16px;
   background: #fff;
