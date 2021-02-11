@@ -33,27 +33,7 @@
     <!-- 推荐商家 -->
     <div class="shoplist-title">推荐商家</div>
     <!-- 商家 --> 
-    <div class="contentList" @click="$router.push('/f-details')">
-      <img src="image/flower.jpg" alt="">
-      <div class="tag">
-        <div class="title">
-          <b>简花·单品鲜花月套餐</b>
-          <i>¥800</i>
-        </div>
-        <div class="tips">一周一花，每月4次，精选一周当季花材，品种随机</div>
-      </div>
-    </div>
-    <div class="contentList" @click="$router.push('/f-details')">
-      <img src="image/flower.jpg" alt="">
-      <div class="tag">
-        <div class="title">
-          <b>简花·单品鲜花月套餐</b>
-          <i>¥800</i>
-        </div>
-        <div class="tips">一周一花，每月4次，精选一周当季花材，品种随机</div>
-      </div>
-    </div>
-    <div class="contentList" @click="$router.push('/f-details')">
+    <div class="contentList" @click="$router.push('/f-details')" v-for="i in 8">
       <img src="image/flower.jpg" alt="">
       <div class="tag">
         <div class="title">
