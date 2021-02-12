@@ -70,7 +70,27 @@ const router = new VueRouter({
       path: '/login',
       name: 'login',
       component: ()=>import("../views/login.vue")
-    }
+    },
+    {
+      path: '/lock',
+      name: 'lock',
+      component: ()=>import("../views/Lock.vue")
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: ()=>import("../views/Edit.vue")
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: ()=>import("../views/About.vue")
+    },
+    {
+      path: '/version',
+      name: 'version',
+      component: ()=>import("../views/Version.vue")
+    },
   ]
   
 })

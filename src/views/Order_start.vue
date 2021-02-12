@@ -65,6 +65,7 @@ export default {
 }
 .order_start{
   margin-top: 45px;
+  padding-bottom: 45px;
 }
 .order-public{
   background: #fff;
