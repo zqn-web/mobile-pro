@@ -10,7 +10,8 @@
     <div class="search_wrap">
       <div class="shop_search">
         <img src="image/search.png" alt="">
-        搜索商家 商家名称
+        <input type="text" placeholder="搜索商家 商家名称">
+        <!-- 搜索商家 商家名称 -->
       </div>
     </div>
     <div id="container" >
@@ -61,6 +62,11 @@ export default {
 }
 </script>
 <style scoped>
+.shop_search input{
+  outline: none;
+  border: none;
+  margin-left: 0.5rem;
+}
 .home {
   width: 100%;
   height: 100%;
@@ -78,8 +84,10 @@ export default {
 .address_map img {
   height: 15px;
   width: 15px;
+  margin: 0 3px 3px 0;
 }
 .shop_search img {
+  margin-left: 3rem ;
   height: 15px;
   width: 15px;
   vertical-align: middle;
@@ -101,7 +109,7 @@ export default {
   color: #aaa;
 }
 .search_wrap {
-  
+  text-align: center;
   position: sticky;
   top: 0px;
   z-index: 999;
